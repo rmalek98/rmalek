@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automating Facebook Page Posting Using the Meta Graph API | rmalek</title>
+    <meta name="description" content="Step-by-step 2025 guide to automating Facebook Page posting using the Meta Graph API. Learn how to create a Meta app, generate System User and Page tokens, post and delete posts with cURL and Python, and follow security best practices.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Automating Facebook Page Posting Using the Meta Graph API (2025 Full Guide)",
+      "author": {
+        "@type": "Person",
+        "name": "Malek Rhaouate"
+      },
+      "datePublished": "2025-01-15",
+      "dateModified": "2025-01-15",
+      "description": "Step-by-step 2025 guide to automating Facebook Page posting using the Meta Graph API. Includes Meta app setup, System User and Page tokens, cURL/Python examples, and security best practices.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://rmalek.com/blog-facebook-api-automation.html"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Burger Menu -->
+    <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation Overlay -->
+    <nav class="nav-overlay" id="nav-overlay">
+        <div class="nav-content">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link" data-text="Home">Home</a></li>
+                <li><a href="about.html" class="nav-link" data-text="About">About</a></li>
+                <li><a href="work.html" class="nav-link" data-text="Work">Work</a></li>
+                <li><a href="blog.html" class="nav-link" data-text="Blog">Blog</a></li>
+                <li><a href="contact.html" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+        </a>
+        <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Blog Post Content -->
+    <main class="page-content">
+        <div class="container blog-post-container">
+            <a href="blog.html" class="back-to-blog">← Back to Blog</a>
+            
+            <article class="blog-post">
+                <div class="blog-post-header">
+                    <div class="blog-post-category">Tech</div>
+                    <h1 class="blog-post-title">🚀 Automating Facebook Page Posting Using the Meta Graph API (2025 Full Guide)</h1>
+                    <div class="blog-post-meta">
+                        <span class="blog-post-date">Jan 15, 2025</span>
+                    </div>
+                </div>
+
+                <div class="blog-post-content">
+                    <p class="blog-intro">This guide explains how to automate posting to a Facebook Page using the Meta Graph API, including setup, token generation, posting, deleting posts, and best practices. All sensitive values in this guide use safe placeholders.</p>
+
+                    <hr class="blog-divider">
+
+                    <h2>🔍 Overview</h2>
+                    <ul class="blog-list">
+                        <li><strong>Platform:</strong> Facebook (Meta)</li>
+                        <li><strong>API:</strong> Graph API v22.0</li>
+                        <li><strong>Goal:</strong> Automate posting to your Facebook Page</li>
+                        <li><strong>Method:</strong> System User (long-lived automation account)</li>
+                        <li><strong>Difficulty:</strong> Easy–Moderate</li>
+                        <li><strong>Best For:</strong> Event posting, affiliate posting, alerts, scheduled content, bots</li>
+                    </ul>
+
+                    <hr class="blog-divider">
+
+                    <h2>✅ Requirements</h2>
+                    <p>Before you start, you must have:</p>
+                    <ol class="blog-list">
+                        <li>Meta Developer App — <a href="https://developers.facebook.com" target="_blank">https://developers.facebook.com</a></li>
+                        <li>Meta Business Manager account — required for System User tokens</li>
+                        <li>A Facebook Page you manage</li>
+                        <li>A System User added inside Business Manager</li>
+                        <li>Permissions granted to the System User:
+                            <ul>
+                                <li><code>pages_manage_posts</code></li>
+                                <li><code>pages_read_engagement</code></li>
+                                <li><code>pages_show_list</code></li>
+                                <li><code>public_profile</code></li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 1 — Create a System User</h2>
+                    <ol class="blog-list">
+                        <li>Go to <strong>Business Settings → Users → System Users</strong></li>
+                        <li>Click <strong>Add System User</strong></li>
+                        <li>Choose a name → Role = <strong>Admin</strong></li>
+                        <li>Assign the System User to:
+                            <ul>
+                                <li>your Facebook Page</li>
+                                <li>your Facebook App</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>This System User is what allows automated posting.</p>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 2 — Generate a System User Token</h2>
+                    <p>Inside <strong>Business Settings → System Users → Select your system user</strong>:</p>
+                    <ol class="blog-list">
+                        <li>Click <strong>Generate Token</strong></li>
+                        <li>Select your App</li>
+                        <li>Enable these scopes:
+                            <ul>
+                                <li><code>pages_manage_posts</code></li>
+                                <li><code>pages_read_engagement</code></li>
+                                <li><code>pages_show_list</code></li>
+                                <li><code>public_profile</code></li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>You will receive a 60-day renewable System User Token:</p>
+                    <div class="code-block">
+                        <code>1234567890abcdefSYSTEMUSERTOKEN1234567890</code>
+                    </div>
+                    <p class="blog-warning">🔒 Keep this private — never store in GitHub.</p>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 3 — Get Your Facebook Page ID</h2>
+                    <p>Find it in:</p>
+                    <p><strong>Business Settings → Pages → Select Page</strong></p>
+                    <p>Example:</p>
+                    <div class="code-block">
+                        <code>123456789012345</code>
+                    </div>
+                    <p>You need this for every API request.</p>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 4 — Fetch Your Page Access Token</h2>
+                    <p>Use the System User Token to request a Page Token:</p>
+                    
+                    <h3>📌 cURL</h3>
+                    <div class="code-block">
+                        <pre><code>curl -X GET \
+"https://graph.facebook.com/v22.0/123456789012345?fields=access_token&access_token=1234567890abcdefSYSTEMUSERTOKEN1234567890"</code></pre>
+                    </div>
+
+                    <h3>Response:</h3>
+                    <div class="code-block">
+                        <pre><code>{
+  "access_token": "1234567890abcdefPAGEACCESSTOKEN1234567890",
+  "id": "123456789012345"
+}</code></pre>
+                    </div>
+                    <p>Save the <code>page_access_token</code>. This is the token you actually use to post.</p>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 5 — Post to the Facebook Page</h2>
+                    
+                    <h3>📌 cURL Example</h3>
+                    <div class="code-block">
+                        <pre><code>curl -X POST "https://graph.facebook.com/v22.0/123456789012345/feed" \
+-F "message=🎉 New events are live this week!" \
+-F "link=https://yourdomain.com/events" \
+-F "access_token=1234567890abcdefPAGEACCESSTOKEN1234567890"</code></pre>
+                    </div>
+
+                    <h3>📌 Python Example</h3>
+                    <div class="code-block">
+                        <pre><code>import requests
+
+PAGE_ID = "123456789012345"
+PAGE_TOKEN = "1234567890abcdefPAGEACCESSTOKEN1234567890"
+
+def post_to_facebook(message, link=None):
+    url = f"https://graph.facebook.com/v22.0/{PAGE_ID}/feed"
+    payload = {
+        "message": message,
+        "access_token": PAGE_TOKEN
+    }
+
+    if link:
+        payload["link"] = link
+
+    res = requests.post(url, data=payload)
+    print(res.json())
+
+post_to_facebook(
+    message="📣 Don't miss this week's updates!",
+    link="https://yourdomain.com/events"
+)</code></pre>
+                    </div>
+                    <p>This automatically generates a clickable preview card.</p>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 6 — Delete a Facebook Post</h2>
+                    <p>Every successful post returns an ID like:</p>
+                    <div class="code-block">
+                        <code>123456789012345_987654321098765</code>
+                    </div>
+
+                    <h3>📌 cURL</h3>
+                    <div class="code-block">
+                        <pre><code>curl -X DELETE \
+"https://graph.facebook.com/v22.0/123456789012345_987654321098765?access_token=1234567890abcdefPAGEACCESSTOKEN1234567890"</code></pre>
+                    </div>
+
+                    <h3>📌 Python</h3>
+                    <div class="code-block">
+                        <pre><code>import requests
+
+POST_ID = "123456789012345_987654321098765"
+PAGE_TOKEN = "1234567890abcdefPAGEACCESSTOKEN1234567890"
+
+url = f"https://graph.facebook.com/v22.0/{POST_ID}"
+res = requests.delete(url, params={"access_token": PAGE_TOKEN})
+print(res.json())</code></pre>
+                    </div>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 7 — Token Expiration & Refreshing</h2>
+                    <ul class="blog-list">
+                        <li>Tokens last <strong>60 days</strong></li>
+                        <li>To renew:
+                            <ol>
+                                <li>Generate a new System User Token</li>
+                                <li>Fetch a new Page Token using the same API call</li>
+                            </ol>
+                        </li>
+                        <li>Automate renewal every <strong>55 days</strong> to be safe</li>
+                    </ul>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 8 — Security Best Practices</h2>
+                    <ul class="blog-list">
+                        <li>Store tokens in environment variables (.env files)</li>
+                        <li>Never commit tokens to GitHub</li>
+                        <li>Restrict access to servers that run posting scripts</li>
+                        <li>Use HTTPS links for best preview rendering</li>
+                    </ul>
+
+                    <hr class="blog-divider">
+
+                    <h2>⭐ Step 9 — Common Automation Use Cases</h2>
+                    <ul class="blog-list blog-checklist">
+                        <li>✔️ Auto-posting events</li>
+                        <li>✔️ Affiliate link previews</li>
+                        <li>✔️ Scheduled promotions</li>
+                        <li>✔️ Auto-sharing blog posts</li>
+                        <li>✔️ Marketplace bots</li>
+                        <li>✔️ Ticketing websites</li>
+                        <li>✔️ Announcement systems</li>
+                    </ul>
+
+                    <hr class="blog-divider">
+
+                    <h2>🎉 Final Notes</h2>
+                    <p>By using a System User + Page Access Token, you get the most stable, long-lived, automation-friendly way to publish content to Facebook.</p>
+                    <p>If you have questions, spot something that changed in the Meta docs, or just want to share how you're using this setup, feel free to reach out at <a href="mailto:hello@rmalek.com">hello@rmalek.com</a>.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
