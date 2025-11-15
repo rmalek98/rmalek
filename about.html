@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | rmalek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Burger Menu -->
+    <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation Overlay -->
+    <nav class="nav-overlay" id="nav-overlay">
+        <div class="nav-content">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link" data-text="Home">Home</a></li>
+                <li><a href="about.html" class="nav-link" data-text="About">About</a></li>
+                <li><a href="work.html" class="nav-link" data-text="Work">Work</a></li>
+                <li><a href="blog.html" class="nav-link" data-text="Blog">Blog</a></li>
+                <li><a href="contact.html" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+        </a>
+        <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- About Content -->
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title">About</h1>
+            
+            <div class="about-section">
+                <p class="about-intro">
+                    Security Engineer by day, Developer by night. I build things, break things, and fix things.
+                </p>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h2>Security Engineer</h2>
+                        <p>I focus on visibility, compliance, and practical security engineering. I work across Tanium, CrowdStrike, Kenna, Qualys, Splunk, and CWE analysis to uncover gaps, automate checks, and build clear workflows that help teams understand risk, track remediation, and stay aligned with policy.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h2>Software Engineer / Builder</h2>
+                        <p>I make things — apps, tools, dashboards, anything useful. I enjoy turning ideas into working products with clean UI and simple, practical engineering.</p>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h2 class="section-heading">Skills &amp; Tools</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Security</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Security Automation</span>
+                                <span class="skill-tag">Vulnerability Assessment</span>
+                                <span class="skill-tag">Endpoint Hardening</span>
+                                <span class="skill-tag">Security Architecture</span>
+                                <span class="skill-tag">Access Control / RBAC</span>
+                                <span class="skill-tag">Compliance Automation</span>
+                                <span class="skill-tag">CWE Analysis &amp; Mapping</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Tools</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Tanium</span>
+                                <span class="skill-tag">CrowdStrike</span>
+                                <span class="skill-tag">Splunk</span>
+                                <span class="skill-tag">Kenna</span>
+                                <span class="skill-tag">Qualys</span>
+                                <span class="skill-tag">Alteryx</span>
+                                <span class="skill-tag">n8n</span>
+                                <span class="skill-tag">MS Graph API</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Development</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python (Automation &amp; API Integrations)</span>
+                                <span class="skill-tag">Flask / FastAPI</span>
+                                <span class="skill-tag">PowerShell</span>
+                                <span class="skill-tag">SQL / SQLite / MSSQL</span>
+                                <span class="skill-tag">Alpine.js / Tailwind</span>
+                                <span class="skill-tag">n8n</span>
+                                <span class="skill-tag">LLM Integrations (Ollama)</span>
+                                <span class="skill-tag"> Automation Orchestration (n8n)</span>
+                            </div>
+                        </div>
+
+                </div>
+
+                <div class="interests-section">
+                    <h2 class="section-heading">Beyond Code</h2>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <h3>Cars</h3>
+                            <p>Car enthusiast — especially Porsche 911s and Toyota Land Cruisers.</p>
+                        </div>
+                        <div class="interest-item">
+                            <h3>Road Bikes</h3>
+                            <p>Long rides, building bikes, and exploring on two wheels.</p>
+                        </div>
+                        <div class="interest-item">
+                            <h3>Food</h3>
+                            <p>Cooking, exploring flavors, and sharing meals.</p>
+                        </div>
+                        <div class="interest-item">
+                            <h3>Tech</h3>
+                            <p>Always learning, building, and exploring new technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
